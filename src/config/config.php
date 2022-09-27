@@ -1,6 +1,7 @@
 <?php
 
 return [
-  'users_table' => 'users',
-  // other options...
+    'users_table' => 'users',
+    'prefix' => 'admin',
+    'middleware' => ['web'],
 ];

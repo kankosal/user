@@ -3,6 +3,7 @@
 namespace Kankosal\User;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -18,12 +19,7 @@ class UserServiceProvider extends ServiceProvider
                 __DIR__.'/config/config.php' => config_path('admin_user.php'),
             ], 'config');
 
-            if (! class_exists('CreateUsersTable')) {
-                $this->publishes([
-                  __DIR__ . '/database/migrations/2014_10_12_000000_create_users_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_users_table.php'),
-                  // you can add any number of migrations here
-                ], 'migrations');
-            }
+            $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         }
     }
 
@@ -34,6 +30,23 @@ class UserServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__.'/routes.php';
+        $this->registerRoutes();
+
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'admin_user');
+    }
+
+    protected function registerRoutes()
+    {
+        Route::group($this->routeConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        });
+    }
+
+    protected function routeConfiguration()
+    {
+        return [
+            'prefix' => config('admin_user.prefix'),
+            'middleware' => config('admin_user.middleware'),
+        ];
     }
 }
