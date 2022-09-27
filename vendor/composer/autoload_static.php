@@ -16,7 +16,7 @@ class ComposerStaticInitcd74a36e19ed77d8602f493538e548b7
     public static $prefixDirsPsr4 = array (
         'Kankosal\\User\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/packages/kankosal/user/src',
         ),
     );
 

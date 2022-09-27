@@ -7,11 +7,17 @@
             "Kankosal\\User\\": "packages/kankosal/user/src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kankosal\\User\\UserServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "Kan Kosal"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "minimum-stability": "dev"
 }
