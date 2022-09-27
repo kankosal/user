@@ -1,7 +1,7 @@
 {
     "name": "kankosal/user",
     "description": "User Management",
-    "license": "kosalkan",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Kankosal\\User\\": "packages/kankosal/user/src/"
