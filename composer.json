@@ -4,14 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Kankosal\\User\\": "packages/kankosal/user/src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Kankosal\\User\\UserServiceProvider"
-            ]
+            "Kankosal\\User\\": "src/"
         }
     },
     "authors": [
