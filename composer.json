@@ -7,6 +7,13 @@
             "Kankosal\\User\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kankosal\\User\\UserServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "Kan Kosal"
