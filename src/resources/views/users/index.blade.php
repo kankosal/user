@@ -1,7 +1,7 @@
-<h1>Showing all Users</h1>
-
-@forelse ($users as $post)
-    <li>{{ $post->title }}</li>
-@empty
-    <p> 'No posts yet' </p>
-@endforelse
+@extends('admin_user::layouts.admin')
+ 
+@section('title', 'Page Title')
+ 
+@section('content')
+    <p>This is my body content.</p>
+@endsection
