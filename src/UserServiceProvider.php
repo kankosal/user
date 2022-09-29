@@ -35,6 +35,8 @@ class UserServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        \Illuminate\Pagination\Paginator::useBootstrap();
+        
         $this->registerRoutes();
 
         $this->loadViewsFrom(__DIR__.'/resources/views', 'admin_user');

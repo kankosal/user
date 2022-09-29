@@ -20,6 +20,33 @@
 
     <!-- Main content -->
     <div class="content">
+        @if (count($errors) > 0)
+            <div class="system-message-container">
+                <div id="system-message" class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{!! $error !!}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
+
+        @if (session()->has('error'))
+            <div class="system-message-container">
+                <div class="alert bg-danger" role="alert">
+                    {!! session('error') !!}
+                </div>
+            </div>
+        @endif
+
+        @if (session()->has('success'))
+            <div class="system-message-container">
+                <div class="alert bg-success" role="alert">
+                    {!! session('success') !!}
+                </div>
+            </div>
+        @endif
         @yield('content')
     </div>
     <!-- /.content -->

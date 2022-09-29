@@ -7,6 +7,11 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">User</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool">
+                    <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">{!! __('Create New') !!}</a>
+                </button>
+            </div>
         </div>
         <div class="card-body p-0">
             <table class="table table-striped">
