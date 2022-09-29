@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Kankosal\\User\\' => array($baseDir . '/packages/kankosal/user/src'),
+    'Kankosal\\User\\' => array($baseDir . '/src'),
 );

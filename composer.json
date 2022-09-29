@@ -2,6 +2,9 @@
     "name": "kankosal/user",
     "description": "User Management",
     "license": "MIT",
+    "require": {
+        "laravelcollective/html": "^6.3"
+    },
     "autoload": {
         "psr-4": {
             "Kankosal\\User\\": "src/"

@@ -16,8 +16,13 @@ class UserServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/config/config.php' => config_path('admin_user.php'),
+                __DIR__.'/config/admin_user.php' => config_path('admin_user.php'),
             ], 'config');
+
+            // Publish assets
+            $this->publishes([
+                __DIR__.'/resources/assets' => public_path('/'),
+            ], 'assets');
 
             $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         }

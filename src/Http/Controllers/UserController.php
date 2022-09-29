@@ -9,43 +9,40 @@ class UserController extends Controller
 {
     function __construct()
     {
-        
     }
-    
+
     public function index(Request $request)
     {
-        $users = [];//User::all();
+        $limit = $request->get('limit', 10);
 
-        return view('admin_user::users.index', compact('users'));
+        $rows = User::paginate($limit)->withQueryString();
+        return view('admin_user::users.index', compact('rows'));
     }
 
     public function create()
     {
-        
+        $users = []; //User::all();
+
+        return view('admin_user::users.form', compact('users'));
     }
 
     public function edit($id)
     {
-        
     }
 
     public function show($id)
     {
-        
     }
 
     public function store(Request $request)
     {
-        
     }
 
     public function update(Request $request)
     {
-        
     }
 
     public function destroy($id)
     {
-        
     }
 }
