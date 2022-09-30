@@ -24,7 +24,7 @@ class MyProfileController extends Controller
      */
     public function getMyProfile()
     {
-        return view('admin_user::users.my_profile');
+        return view('admin_user::my_profile.my_profile');
     }
 
     public function postMyProfile(Request $request)
@@ -47,7 +47,7 @@ class MyProfileController extends Controller
 
     public function getChangePassword()
     {
-        return view('admin_user::users.change_password');
+        return view('admin_user::my_profile.change_password');
     }
 
     public function postChangePassword(Request $request)
