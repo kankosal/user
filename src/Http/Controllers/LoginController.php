@@ -29,6 +29,6 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        abort(401);
+        return view('admin_user::auth.login');
     }
 }
