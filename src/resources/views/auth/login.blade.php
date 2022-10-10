@@ -1,6 +1,6 @@
-@extends('admin_user::layouts.admin')
+@extends('admin_user::layouts.auth')
 
-@section('page_title', __('My Profile'))
+@section('page_title', __('Login'))
 
 @section('content')
     <div class="login-box">
