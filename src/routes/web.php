@@ -5,6 +5,7 @@ use Kankosal\User\Http\Controllers\UserController;
 use Kankosal\User\Http\Controllers\MyProfileController;
 
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'postLogin'])->name('admin.login');
 
 Route::group(['middleware' => 'auth', 'as' => 'admin.'], function () {
 
